@@ -1,0 +1,35 @@
+train:
+  root_original: "/media/hdd1/ngoc/NAS/Original_vid_2s/Original/"
+  root_train: "/media/hdd1/ngoc/NAS/Original_vid_2s/Train/"
+  root_mask: "/media/hdd1/ngoc/NAS/Original_vid_2s/Mask_MP4/"
+  caption_file: "/media/hdd1/ngoc/NAS/CM2_DVC/generated_caption.txt"
+  resize: [256, 256]
+  batch_size: 1
+  num_workers: 0
+  epochs: 50
+  lr: 1e-4
+  timesteps: 1000
+  scale_factor: 0.18215
+  lambda_bg: 1.0
+  save_every: 5
+  ckpt_dir: "checkpoints"
+  log_dir: "logs"
+  vae_path: "/media/hdd1/ngoc/NAS/checkpoints/stable-diffusion-v1-5"
+
+text_encoder:
+  model: "openai/clip-vit-base-patch32"
+  device: "cuda"
+  model_path: "/media/hdd1/ngoc/NAS/checkpoints/clip-vit-base-patch32"
+
+inference:
+  input_video: "/media/hdd1/ngoc/NAS/Original_vid_2s/Train/Class_C/BQMall_832x480_60.mp4"
+  input_mask: "/media/hdd1/ngoc/NAS/Original_vid_2s/Mask_MP4/Class_C/BQMall_832x480_60.mp4"
+  caption_file: "/media/hdd1/ngoc/NAS/CM2_DVC/generated_caption.txt"
+  output_path: "results/output_no_grad.mp4"
+  resize: [256, 256]
+  timesteps: 50
+  beta: 0.7
+  scale_factor: 0.18215
+  checkpoint: "/media/hdd1/ngoc/NAS/proposed_model/checkpoints/model_epoch_50.pth"
+  vae_path: "/media/hdd1/ngoc/NAS/checkpoints/stable-diffusion-v1-5"
+  guidance_scale: 1.0

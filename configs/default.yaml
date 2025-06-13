@@ -1,0 +1,93 @@
+train:
+  root_original: "/media/hdd1/ngoc/NAS/Original_vid_2s/Original/"
+  root_train: "/media/hdd1/ngoc/NAS/Original_vid_2s/Train/"
+  root_mask: "/media/hdd1/ngoc/NAS/Original_vid_2s/Mask_MP4/"
+  caption_file: "/media/hdd1/ngoc/NAS/CM2_DVC/generated_caption.txt"
+  resize: [256, 256]
+  batch_size: 1
+  num_workers: 0
+  epochs: 50
+  lr: 1e-4
+  timesteps: 1000
+  scale_factor: 0.18215
+  lambda_bg: 1.0
+  save_every: 5
+  ckpt_dir: "checkpoints"
+  log_dir: "logs"
+  vae_ckpt: "/media/hdd1/ngoc/NAS/checkpoints/stable-diffusion-v1-5/v1-5-pruned.ckpt"  
+  embed_dim: 4
+  use_temporal_unet: true
+  unet_ckpt: "/media/hdd1/ngoc/NAS/videocomposer/model_weights/non_ema_228000.pth"  
+  ddconfig:
+    ch: 128
+    out_ch: 3
+    ch_mult: [1, 2, 4, 4]
+    num_res_blocks: 2
+    attn_resolutions: [16]
+    dropout: 0.0
+    resamp_with_conv: true
+    in_channels: 3
+    resolution: 256
+    z_channels: 4
+    double_z: true
+    use_linear_attn: false
+    attn_type: "vanilla"
+
+
+text_encoder:
+  model: "openai/clip-vit-base-patch32"
+  device: "cuda"
+  model_path: "/media/hdd1/ngoc/NAS/checkpoints/clip-vit-base-patch32"
+
+inference:
+  input_video: "/media/hdd1/ngoc/NAS/Original_vid_2s/Original/Class_D/BasketballPass_416x240_50.mp4"
+  input_mask: "/media/hdd1/ngoc/NAS/Original_vid_2s/Mask_MP4/Class_C/BasketballPass_416x240_50.mp4"
+  caption_file: "/media/hdd1/ngoc/NAS/CM2_DVC/generated_caption.txt"
+  output_path: "results/output_00.mp4"
+  max_frames: 120  # or any number of frames to process
+  resize: [256, 256]
+  timesteps: 50
+  beta: 0.7
+  scale_factor: 0.18215
+  checkpoint: "/media/hdd1/ngoc/NAS/proposed_model/checkpoints/model_epoch_50.pth"
+  vae_ckpt: "/media/hdd1/ngoc/NAS/checkpoints/stable-diffusion-v1-5/v1-5-pruned.ckpt"
+  embed_dim: 4
+  guidance_scale: 1.0
+  use_temporal_unet: true
+  temporal_unet_ckpt: "/media/hdd1/ngoc/NAS/videocomposer/model_weights/non_ema_228000.pth"
+  unet_config:
+    in_dim: 4
+    concat_dim: 8
+    dim: 320
+    y_dim: 1024
+    context_dim: 1024
+    out_dim: 4
+    dim_mult: [1, 2, 4]
+    num_heads: 8
+    head_dim: 64
+    num_res_blocks: 2
+    attn_scales: [0.25, 0.125]
+    dropout: 0.0
+    temporal_attention: true
+    temporal_attn_times: 1
+    use_checkpoint: false
+    use_fps_condition: false
+    use_sim_mask: false
+    misc_dropout: 0.5
+    video_compositions: ["text"]
+  ddconfig:
+    ch: 128
+    out_ch: 3
+    ch_mult: [1, 2, 4, 4]
+    num_res_blocks: 2
+    attn_resolutions: [16]
+    dropout: 0.0
+    resamp_with_conv: true
+    in_channels: 3
+    resolution: 256
+    z_channels: 4
+    double_z: true
+    use_linear_attn: false
+    attn_type: "vanilla"
+    tanh_out: True
+    

@@ -1,0 +1,5 @@
+
+VVCSoftware: VTM Encoder Version 12.0 [Linux][GCC 7.5.0][64 bit] [SIMD=AVX2] 
+
+
+Error: found fewer Reference Picture Sets than GOPSize

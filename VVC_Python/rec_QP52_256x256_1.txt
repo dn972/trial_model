@@ -1,0 +1,58 @@
+vvencFFapp: VVenC, the Fraunhofer H.266/VVC Encoder, version 1.10.0 [Linux][GCC 11.4.0][64 bit][SIMD=AVX2]
+vvencFFapp [info]: started @ Wed Jan  3 04:29:57 2024
+vvenc [verbose]: Input File                             : /media/EXT0/daole/sd_scripts/VVC_Python/input_256x256_1.yuv
+vvenc [verbose]: Bitstream File                         : /media/EXT0/daole/sd_scripts/VVC_Python/rec_QP52_256x256_1.h266
+vvenc [verbose]: Real Format                            : 256x256  yuv420p  1 Hz  SDR  1 frame
+vvenc [verbose]: Frames                                 : encode 1 frame 
+vvenc [verbose]: Internal format                        : 256x256  1 Hz  SDR
+vvenc [verbose]: Threads                                : 0  (parallel frames: 0)
+vvenc [verbose]: Rate control                           : QP 52
+vvenc [verbose]: Perceptual optimization                : Disabled
+vvenc [verbose]: Intra period (keyframe)                : 32
+vvenc [verbose]: Decoding refresh type                  : CRA
+vvenc [verbose]: Sequence PSNR output                   : Linear average only
+vvenc [verbose]: Hexadecimal PSNR output                : Disabled
+vvenc [verbose]: Sequence MSE output                    : Disabled
+vvenc [verbose]: Frame MSE output                       : Disabled
+vvenc [verbose]: Cabac-zero-word-padding                : Enabled
+vvenc [verbose]: Frame index                            : 1 frames
+vvenc [verbose]: Profile                                : main_10_still_picture
+vvenc [verbose]: Level                                  : 1
+vvenc [verbose]: CU size                                : 64
+vvenc [verbose]: Max TB size                            : 64
+vvenc [verbose]: Min CB size                            : 4
+vvenc [verbose]: Motion search range                    : 128
+vvenc [verbose]: QP                                     : 52
+vvenc [verbose]: Max dQP signaling subdiv               : 0
+vvenc [verbose]: Cb QP Offset (dual tree)               : 0 (0)
+vvenc [verbose]: Cr QP Offset (dual tree)               : 0 (0)
+vvenc [verbose]: GOP size                               : 32
+vvenc [verbose]: PicReordering                          : 1
+vvenc [verbose]: Input bit depth                        : (Y:8, C:8)
+vvenc [verbose]: MSB-extended bit depth                 : (Y:8, C:8)
+vvenc [verbose]: Internal bit depth                     : (Y:10, C:10)
+vvenc [verbose]: cu_chroma_qp_offset_subdiv             : -1
+vvenc [verbose]: log2_sao_offset_scale_luma             : 0
+vvenc [verbose]: log2_sao_offset_scale_chroma           : 0
+vvenc [verbose]: Cost function:                         : Lossy coding
+
+vvenc [verbose]: CODING TOOL CFG: CTU64 QTMin44BTT10 IBD:1 SAO:1 ALF:1 (NonLinLuma:0 NonLinChr:0) CCALF:1 Tiles:1x1 Slices:1 WPP:0 WPP-Substreams:1 TMVP:1 DQ:1 SDH:0 CST:1 BDOF:1 DMVR:1 MTSImplicit:1 SBT:0 JCbCr:1 CabacInitPresent:1 AMVR:5 SMVD:0 LMCS:2 (Signal:SDR Opt:0) CIIP:0 MIP:0 AFFINE:5 (PROF:1, Type:1) MMVD:3 DisFracMMVD:1 SbTMVP:1 GPM:0 LFNST:1 MTS:0 ISP:0 TS:2 TSLog2MaxSize:4 useChromaTS:0 BDPCM:2 IBC:2 BCW:0 
+vvenc [verbose]: ENC. ALG. CFG: QPA:0 HAD:1 RDQ:1 RDQTS:1 ASR:1 MinSearchWindow:96 EDO:0 MCTF:2 BIM:1 
+vvenc [verbose]: PRE-ANALYSIS CFG: STA:1 LeadFrames:0 TrailFrames:0 
+vvenc [verbose]: FAST TOOL CFG: ECU:2 FEN:3 FDM:1 FastSearch:4 (SCC:2) LCTUFast:1 FastMrg:3 PBIntraFast:1 AMaxBT:1 FastQtBtEnc:1 ContentBasedFastQtbt:1 FastIntraTools:0 IntraEstDecBit:2 FastLocalDualTree:1 IntegerET:0 FastSubPel:1 ReduceFilterME:2 QtbttExtraFast:3 FastTTSplit:0 IBCFastMethod:4 FIM:2 (19) ALFSpeed:1 QuantThr:4 SelectiveRDQO:0 
+vvenc [verbose]: RATE CONTROL CFG: RateControl:0 QP:52 LookAhead:0 FirstPassMode:2 
+vvenc [verbose]: PARALLEL PROCESSING CFG: NumThreads:0 MaxParallelFrames:0 FppLinesSynchro:0 WppBitEqual:0 WF:0 
+
+POC     0 TId: 0 (IDR_W_RADL, I-SLICE, QP 49)             5472 bits [Y 25.6602 dB    U 31.0446 dB    V 31.3603 dB] [ET     0 ] [L0 ] [L1 ]
+
+vvenc [info]: stats summary: frame= 1/1 avg_fps= 7.3 avg_bitrate= 5.47 kbps
+vvenc [info]: stats summary: frame I: 1, kbps: 5.47, AvgQP: 49.00
+vvenc [info]: stats summary: frame P: 0, kbps:  nan, AvgQP: nan
+vvenc [info]: stats summary: frame B: 0, kbps:  nan, AvgQP: nan
+
+
+vvenc [info]:	Total Frames |   Bitrate     Y-PSNR    U-PSNR    V-PSNR    YUV-PSNR   
+vvenc [info]:	        1    a       5.4720   25.6602   31.0446   31.3603   26.8534
+
+vvencFFapp [info]: finished @ Wed Jan  3 04:29:57 2024
+vvencFFapp [info]: Total Time:        0.149 sec. [user]        0.149 sec. [elapsed]
